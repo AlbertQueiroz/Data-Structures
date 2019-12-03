@@ -3,6 +3,15 @@ package Trabalho;
 public class Main {
 
 	public static void main(String[] args) {
+		Lista l = new ListaDuplamenteEncadeada();
+		l.Insert(4);
+		l.Insert(1);
+		l.Insert(3);
+		l.Insert(2);
+		l.Insert(5);
+		l.Insert(3);
+		l.Print();
+		
 		ListaOrdenada l1 = new ListaOrdenadaVetor(10);
 		l1.Insert(4);
 		l1.Insert(1);
