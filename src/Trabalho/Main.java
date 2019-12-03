@@ -28,6 +28,9 @@ public class Main {
 		l3.Insert(20);
 		l3.Insert(5);
 		l3.Insert(20);
+		l3.Insert(-1);
+		l3.Insert(50);
+		l3.Insert(40);
 		l3.Print();
 		
 		

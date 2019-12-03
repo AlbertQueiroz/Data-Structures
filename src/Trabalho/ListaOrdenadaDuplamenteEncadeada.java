@@ -35,7 +35,8 @@ public class ListaOrdenadaDuplamenteEncadeada implements ListaOrdenada {
 				aux.getBefore().setNext(input);
 				input.setNext(aux);
 				aux.setBefore(input);
-			}else {
+			}else{
+				input.setBefore(aux);
 				input.setNext(aux.getNext());
 				aux.setNext(input);
 			}
