@@ -18,5 +18,4 @@ public class Main {
 		l2.Insert(30);
 		l2.Print();
 	}
-
 }
