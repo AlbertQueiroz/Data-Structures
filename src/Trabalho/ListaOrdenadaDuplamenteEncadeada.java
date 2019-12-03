@@ -1,3 +1,4 @@
+package Trabalho;
 
 public class ListaOrdenadaDuplamenteEncadeada implements ListaOrdenada {
 	private Node first;
@@ -25,24 +26,21 @@ public class ListaOrdenadaDuplamenteEncadeada implements ListaOrdenada {
 			Node aux = first;
 			while(aux.getValue() < value && aux.getNext() != null) {
 				aux = aux.getNext();
-			}
-			if (aux == first) {
+			}if (aux == first && aux.getValue() > value) {
 				input.setNext(aux);
 				aux.setBefore(input);
 				first = input;
 				
 			}else if (aux.getValue() > value){
 				aux.getBefore().setNext(input);
-				input.setBefore(aux.getBefore());
 				input.setNext(aux);
 				aux.setBefore(input);
-			} else {
+			}else {
+				input.setNext(aux.getNext());
 				aux.setNext(input);
-				input.setBefore(aux);
 			}
-			
-		}
 		count++;
+		}
 	}
 
 	@Override

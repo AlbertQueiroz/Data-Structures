@@ -23,11 +23,22 @@ public class ListaOrdenadaEncadeada implements ListaOrdenada{
 			first = input;
 		}else {
 			Node aux = first;
-			while(aux.getNext().getValue() < value) {
+			Node before = null;
+			while(aux.getValue() < value && aux.getNext() != null) {
 				aux = aux.getNext();
+				before = aux;
 			}
-			input.setNext(aux.getNext());
-			aux.setNext(input);
+			if (aux == first && aux.getValue() > value) {
+				input.setNext(aux);
+				first = input;
+				
+			}else if (aux.getValue() > value){
+				before.setNext(input);
+				input.setNext(aux);
+			}else {
+				input.setNext(aux.getNext());
+				aux.setNext(input);
+			}
 		}
 		count++;
 	}
